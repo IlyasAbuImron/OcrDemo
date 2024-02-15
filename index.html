@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+<!--https://www.figma.com/file/3ghJTjtYGy4K3SxPMpzeYg/OCR-%D0%94%D0%B5%D0%BC%D0%BE?type=design&node-id=0-1&mode=design&t=Y3tsQYdMnRTuoZFh-0-->
+<div class="app">
+    <div class="screen start-screen" id="screen1">
+        <div class="start-screen-dialog">
+            <img class="start-screen-dialog__logo" src="static/images/logo-idscan.net-color.svg" alt="Logo">
+            <h2 class="start-screen-dialog__title">
+                OCR Demo
+            </h2>
+            <hr>
+            <img class="start-screen-dialog__icon" src="static/images/🧬document.add.svg" alt="icon"/>
+            <div class="start-screen-dialog__text">
+                Drag PDF, JPG, PNG file here <br>
+                or press the Add New button below
+            </div>
+            <button class="start-screen-dialog__button">
+                Add New
+                <img src="static/images/🧬plus.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <div class="screen result-screen" id="screen2">
+        <nav>Back</nav>
+        <section>
+            <aside>
+                <div class="content-view">
+                    <div class="content-view__header">
+                        <span>img_file_name.jpg</span>
+                        <button>
+                            Add new
+                        </button>
+                    </div>
+                    <div class="content-view__content">
+                        123
+                    </div>
+                </div>
+            </aside>
+            <article>
+                <div class="content-view">
+                    <div class="content-view__header">
+                        <span>
+                            img_file_name.jpg
+                        </span>
+                        <button>Copy</button>
+                        <button>Save</button>
+                    </div>
+                    <div class="content-view__content">
+                        123
+                    </div>
+                </div>
+            </article>
+        </section>
+        <footer>
+            2024, IDScan.net OCR Demo v1.0.0
+        </footer>
+    </div>
+    <script type="module" src="static/scripts/index.js"></script>
+</div>
+</body>
+</html>
