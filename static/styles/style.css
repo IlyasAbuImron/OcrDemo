@@ -700,6 +700,51 @@ button {
   width: 100%;
 }
 
+.is-dragover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter;
+  color: #0067F5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  background: #FFF;
+  z-index: 99;
+}
+
+.drop-file {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.drop-file-icon {
+  width: 96px;
+  height: 96px;
+  filter: invert(25%) sepia(84%) saturate(3882%) hue-rotate(207deg) brightness(100%) contrast(103%);
+  margin-bottom: 16px;
+}
+
+.supported-files {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.show-drag {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .result-screen {
   background-color: #F5F5F5;
   display: flex;

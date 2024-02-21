@@ -30,3 +30,30 @@ const screen2 = new Screen('screen2')
 
 screen1.show()
 screen2.hide()
+
+const dropZone = document.querySelector('.screen')
+
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.add('is-dragover')
+})
+
+dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('is-dragover')
+})
+
+dropZone.addEventListener('dragend', () => {
+    dropZone.classList.remove('is-dragover')
+})
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    dropZone.classList.remove('is-dragover')
+
+    const files = e.dataTransfer.files
+    for (let i =  0; i < files.length; i++) {
+        console.log(files[i].name)
+    }
+})
