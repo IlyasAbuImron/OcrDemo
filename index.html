@@ -11,8 +11,30 @@
 <body>
 <!--https://www.figma.com/file/3ghJTjtYGy4K3SxPMpzeYg/OCR-%D0%94%D0%B5%D0%BC%D0%BE?type=design&node-id=0-1&mode=design&t=Y3tsQYdMnRTuoZFh-0-->
 <div class="app">
+    <div id="modal-overlay" class="modal">
+        <div id="loading-modal" class="modal-inner">
+            <div class="spinner-container">
+                <span class="loader"></span>
+                <div class="loading-message"></div>
+            </div>
+            <button id="loading-cancel-button" class="cancel-button">Cancel</button>
+        </div>
+        <div id="error-modal" class="error-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Error</h2>
+                <span id="close-error-modal-button" class="close-button"><img src="static/images/close.svg" alt="Close button"></span>
+            </div>
+            <div class="modal-body">
+                <div class="error-info">
+                    <img src="static/images/🧬warning-triangle.svg" alt="Warning icon">
+                    <span class="error-message"></span>
+                </div>
+                <button id="error-confirm-button" class="confirm-button">Ok</button>
+            </div>
+        </div>
+    </div>
     <div class="screen start-screen" id="screen1">
-        <div class="start-screen-dialog">
+        <div class="start-screen-dialog" id="add-new-file">
             <img class="start-screen-dialog__logo" src="static/images/logo-idscan.net-color.svg" alt="Logo">
             <h2 class="start-screen-dialog__title">
                 OCR Demo
@@ -23,10 +45,11 @@
                 Drag PDF, JPG, PNG file here <br>
                 or press the Add New button below
             </div>
-            <button class="start-screen-dialog__button">
+            <div class="start-screen-dialog__button">
                 Add New
                 <img src="static/images/🧬plus.svg" alt="">
-            </button>
+            </div>
+            <input type="file" id="upload-input" multiple />
         </div>
     </div>
     <div class="screen result-screen" id="screen2">

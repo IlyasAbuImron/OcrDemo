@@ -688,6 +688,14 @@ button {
 .start-screen-dialog__text {
   margin-bottom: 40px;
 }
+.start-screen-dialog__button {
+  color: white;
+  background: #0067F5;
+  padding: 5px 16px;
+  border-radius: 8px;
+  border: none;
+  line-height: 22px;
+}
 .start-screen-dialog button {
   width: 100%;
 }
@@ -743,6 +751,112 @@ button {
   border: solid 1px #E0E0E0;
   border-radius: 8px;
   height: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+input[type=file] {
+  display: none;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  font-family: Inter;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+.modal .modal-inner {
+  width: 240px;
+  margin: auto;
+  padding: 48px 24px 24px 24px;
+  border-radius: 16px;
+  background: #FFF;
+}
+.modal .spinner-container {
+  margin-bottom: 32px;
+}
+.modal .spinner-container .loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #0067F5;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.modal .spinner-container .loading-message {
+  margin-top: 8px;
+  color: #0067F5;
+  font-size: 14px;
+}
+.modal .error-modal {
+  margin: auto;
+  width: 448px;
+  border-radius: 16px;
+  background: #FFF;
+  animation: fadeIn 1s;
+}
+.modal .error-modal .modal-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal .error-modal .modal-header .modal-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.modal .error-modal .modal-header .close-button {
+  cursor: pointer;
+}
+.modal .error-modal .modal-body {
+  padding: 0 16px 16px 16px;
+}
+.modal .error-modal .modal-body .error-info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+.modal .error-modal .modal-body .error-info .error-message {
+  margin-left: 10px;
+}
+.modal .error-modal .modal-body .confirm-button {
+  margin-left: 88%;
+}
+
+.modal--hide {
+  display: none;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
