@@ -66,11 +66,7 @@ $blue-color: #0067F5;
   width:  100%;
   height:  100%;
   overflow: auto;
-  opacity:  0;
-  transition: opacity  0.3s ease-in-out;
-  pointer-events: none;
   background: $white-bg;
-  //background: $white-bg;
   z-index: 99;
 }
 
@@ -93,11 +89,6 @@ $blue-color: #0067F5;
   line-height: 24px;
 }
 
-.show-drag {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-//.hide-drag {
+//.is-dragover.dragover {
 //  display: none;
 //}
