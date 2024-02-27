@@ -651,6 +651,12 @@ button {
   line-height: 22px;
 }
 
+:root {
+  --font-family: Inter;
+  --white-bg: #FFF;
+  --blue-color: #0067F5;
+}
+
 .start-screen {
   display: flex;
   justify-content: center;
@@ -689,8 +695,8 @@ button {
   margin-bottom: 40px;
 }
 .start-screen-dialog__button {
-  color: white;
-  background: #0067F5;
+  color: var(--white-bg);
+  background: var(--blue-color);
   padding: 5px 16px;
   border-radius: 8px;
   border: none;
@@ -705,15 +711,15 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: Inter;
-  color: #0067F5;
+  font-family: var(--font-family);
+  color: var(--blue-color);
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: #FFF;
+  background: var(--white-bg);
   z-index: 99;
 }
 
@@ -790,6 +796,12 @@ button {
   height: 100%;
 }
 
+:root {
+  --font-family: Inter;
+  --white-bg: #FFF;
+  --blue-color: #0067F5;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -805,7 +817,7 @@ input[type=file] {
 .modal {
   display: flex;
   align-items: center;
-  font-family: Inter;
+  font-family: var(--font-family);
   position: fixed;
   z-index: 10;
   left: 0;
@@ -823,7 +835,7 @@ input[type=file] {
   margin: auto;
   padding: 48px 24px 24px 24px;
   border-radius: 16px;
-  background: #FFF;
+  background: var(--white-bg);
 }
 .modal .spinner-container {
   margin-bottom: 32px;
@@ -831,7 +843,7 @@ input[type=file] {
 .modal .spinner-container .loader {
   width: 48px;
   height: 48px;
-  border: 3px solid #0067F5;
+  border: 3px solid var(--blue-color);
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
@@ -848,14 +860,14 @@ input[type=file] {
 }
 .modal .spinner-container .loading-message {
   margin-top: 8px;
-  color: #0067F5;
+  color: var(--blue-color);
   font-size: 14px;
 }
 .modal .error-modal {
   margin: auto;
   width: 448px;
   border-radius: 16px;
-  background: #FFF;
+  background: var(--white-bg);
   animation: fadeIn 1s;
 }
 .modal .error-modal .modal-header {

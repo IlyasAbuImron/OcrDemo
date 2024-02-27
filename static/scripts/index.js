@@ -1,5 +1,6 @@
 import { Screen } from "./_screen.mjs";
 import { Dialog } from "./_dialog.mjs";
+import {DragAndDrop} from "./_drag-and-drop.mjs";
 
 const dialogParams = {
     modalOverlay: document.getElementById('modal-overlay'),
@@ -31,8 +32,27 @@ const screen2 = new Screen('screen2')
 screen1.show()
 screen2.hide()
 
-const dragAndDrop = new Screen('.app')
+const dragAndDrop = new DragAndDrop('.app')
 
-dragAndDrop.dragOverEvent()
-dragAndDrop.dragLeaveEvent()
-dragAndDrop.dropEvent()
+dragAndDrop.handleDrop = function (event) {
+    event.preventDefault()
+    event.stopPropagation()
+
+    const files = event.dataTransfer.files
+    for (let i =  0; i < files.length; i++) {
+        console.log(files[i].name)
+    }
+
+    this.removeDragOverBlock()
+
+    if (files.length > 0) {
+        modal.showModalOverlay()
+        modal.showLoadingModal()
+        modal.updateLoadingMessage()
+
+        setTimeout(() => {
+            modal.hideModalOverlay()
+            screen2.show()
+        }, 4000)
+    }
+}
