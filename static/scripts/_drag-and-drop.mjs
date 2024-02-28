@@ -9,8 +9,8 @@ export class DragAndDrop {
     </div>
 `
 
-    constructor(id) {
-        this.dropZone = document.querySelector(id)
+    constructor() {
+        this.dropZone = document.querySelector('.app')
 
         this.dropZone.addEventListener('dragover', (event) => this.handleDragOver(event))
         this.dropZone.addEventListener('dragleave', (event) => this.handleDragleave(event))
