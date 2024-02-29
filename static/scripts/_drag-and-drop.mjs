@@ -11,6 +11,7 @@ export class DragAndDrop {
 
     constructor() {
         this.dropZone = document.querySelector('.app')
+        this.uploadFile = null
 
         this.dropZone.addEventListener('dragover', (event) => this.handleDragOver(event))
         this.dropZone.addEventListener('dragleave', (event) => this.handleDragleave(event))
@@ -48,9 +49,7 @@ export class DragAndDrop {
         event.stopPropagation()
 
         const files = event.dataTransfer.files
-        for (let i =  0; i < files.length; i++) {
-            console.log(files[i].name)
-        }
+        this.uploadFile(files)
 
         this.removeDragOverBlock()
     }

@@ -6,8 +6,6 @@ export class Dialog {
 		loadingCancelButton: document.getElementById('loading-cancel-button'),
 		closeErrorModalButton: document.getElementById('close-error-modal-button'),
 		errorConfirmButton: document.getElementById('error-confirm-button'),
-		addNewFileButton: document.getElementById('add-new-file'),
-		uploadInputButton: document.getElementById('upload-input'),
 		loadingMessage: document.querySelector('.loading-message'),
 		errorMessage: document.querySelector('.error-message')
 	}
@@ -18,33 +16,21 @@ export class Dialog {
 		this.loadingCancelButton = this.dialogParams.loadingCancelButton
 		this.closeErrorModalButton = this.dialogParams.closeErrorModalButton
 		this.errorConfirmButton = this.dialogParams.errorConfirmButton
-		this.addNewFileButton = this.dialogParams.addNewFileButton
-		this.uploadInputButton = this.dialogParams.uploadInputButton
 		this.loadingMessage = this.dialogParams.loadingMessage
 		this.errorMessage = this.dialogParams.errorMessage
 
 		this.loadingCancelButton.addEventListener('click', this.hideModalOverlay.bind(this))
 		this.closeErrorModalButton.addEventListener('click', this.hideModalOverlay.bind(this))
 		this.errorConfirmButton.addEventListener('click', this.hideModalOverlay.bind(this))
-
-		this.addNewFileButton.addEventListener('click', this.showUploadModal.bind(this))
-		this.addNewFileButton.addEventListener('change', (event) => this.addNewFile(event))
-
 	}
 
 	showModalOverlay() {
 		this.modalOverlay.classList.add('modal--show')
 	}
 
-	showUploadModal() {
-		this.uploadInputButton.click()
-	}
-
 	onClickLoadingCancelButton(cancelRequest) {
 		this.loadingCancelButton.addEventListener('click', cancelRequest)
 	}
-
-	addNewFile(event) {}
 
 	updateLoadingMessage() {
 		this.loadingMessage.textContent = 'Loading...'

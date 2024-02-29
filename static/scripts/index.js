@@ -9,7 +9,7 @@ const cancelRequest = () => {
     console.log('Cancel request')
 }
 
-const uploadFile = (file) => {
+const handleFileUpload = (file) => {
     if (file.length) {
         modal.showModalOverlay()
         modal.showLoadingModal()
@@ -21,8 +21,7 @@ const uploadFile = (file) => {
         }, 4000)
     }
 }
-uploadFacade.handleDrop(uploadFile)
-uploadFacade.addNewFileByButton(uploadFile)
+uploadFacade.linkUploadFileToHandlers(handleFileUpload)
 
 modal.onClickLoadingCancelButton(cancelRequest)
 
