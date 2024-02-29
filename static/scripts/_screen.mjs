@@ -3,6 +3,7 @@ class Screen {
 	constructor(id) {
 		this.el = document.getElementById(id)
 	}
+
 	show() {
 		this.el.classList.remove('screen--hide')
 	}
