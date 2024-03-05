@@ -45,11 +45,11 @@
                 Drag PDF, JPG, PNG file here <br>
                 or press the Add New button below
             </div>
-            <div class="start-screen-dialog__button">
+            <button>
                 Add New
                 <img src="static/images/🧬plus.svg" alt="">
-            </div>
-            <input type="file" id="upload-input" multiple />
+            </button>
+            <input type="file" id="upload-input" />
         </div>
     </div>
     <div class="screen result-screen" id="screen2">
@@ -58,27 +58,40 @@
             <aside>
                 <div class="content-view">
                     <div class="content-view__header">
-                        <span>img_file_name.jpg</span>
-                        <button>
-                            Add new
-                        </button>
+                        <div id="document-name"></div>
+                        <div class="content-view__header-buttons">
+                            <button class="add-button">
+                                Add new
+                                <img class="add-button-icon" src="static/images/🧬plus.svg" alt="Plus icon">
+                            </button>
+                            <button class="recognize-button">
+                                Recognize
+                                <img src="static/images/🧬chevron-right.svg" alt="Chevron right">
+                            </button>
+                        </div>
                     </div>
                     <div class="content-view__content">
-                        123
+                        <img src="" id="document-image">
                     </div>
                 </div>
             </aside>
             <article>
                 <div class="content-view">
                     <div class="content-view__header">
-                        <span>
-                            img_file_name.jpg
-                        </span>
-                        <button>Copy</button>
-                        <button>Save</button>
+                        <div>JSON</div>
+                        <div class="content-view__header-buttons">
+                            <button class="copy-and-save-buttons">
+                                Copy
+                                <img src="static/images/🧬copy.svg" alt="Copy icon">
+                            </button>
+                            <button class="copy-and-save-buttons">
+                                Save
+                                <img src="static/images/🧬save.svg" alt="Save icon">
+                            </button>
+                        </div>
                     </div>
                     <div class="content-view__content">
-                        123
+                        <div id="document-text"></div>
                     </div>
                 </div>
             </article>

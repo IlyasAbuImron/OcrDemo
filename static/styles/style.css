@@ -694,15 +694,14 @@ button {
 .start-screen-dialog__text {
   margin-bottom: 40px;
 }
-.start-screen-dialog__button {
+.start-screen-dialog button {
+  font-family: var(--font-family);
   color: var(--white-bg);
   background: var(--blue-color);
   padding: 5px 16px;
   border-radius: 8px;
   border: none;
   line-height: 22px;
-}
-.start-screen-dialog button {
   width: 100%;
 }
 
@@ -780,7 +779,7 @@ button {
 }
 .result-screen .content-view__header {
   display: flex;
-  text-align: left;
+  justify-content: space-between;
   margin-bottom: 16px;
 }
 .result-screen .content-view__header span {
@@ -789,11 +788,22 @@ button {
   line-height: 32px;
   color: #1C1C1C;
 }
+.result-screen .content-view__header-buttons {
+  display: flex;
+  gap: 10px;
+}
 .result-screen .content-view__content {
   background-color: #fff;
   border: solid 1px #E0E0E0;
   border-radius: 8px;
   height: 100%;
+}
+.result-screen .content-view__content img {
+  width: 100%;
+}
+.result-screen .content-view .copy-and-save-buttons {
+  background: #fff;
+  color: #1C1C1C;
 }
 
 :root {

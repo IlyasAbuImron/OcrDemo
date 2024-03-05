@@ -1,9 +1,11 @@
-import { Screen } from "./_screen.mjs";
-import { UploadFacade } from "./_uploadFasade.mjs";
-import { Dialog } from "./_dialog.mjs";
+import {Screen} from "./_screen.mjs";
+import {UploadFacade} from "./_uploadFasade.mjs"
+import {Dialog} from "./_dialog.mjs"
+import {FileManagementFacade} from "./_file-management-facade.mjs"
 
 const uploadFacade = new UploadFacade()
 const modal = new Dialog()
+const fileManagementFacade = new FileManagementFacade()
 
 const cancelRequest = () => {
     console.log('Cancel request')
@@ -11,6 +13,7 @@ const cancelRequest = () => {
 
 const handleFileUpload = (file) => {
     if (file.length) {
+        fileManagementFacade.handleFileInfo(file)
         modal.showModalOverlay()
         modal.showLoadingModal()
         modal.updateLoadingMessage()

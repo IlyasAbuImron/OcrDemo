@@ -41,15 +41,14 @@
   &__text{
     margin-bottom: 40px;
   }
-  &__button {
+  button {
+    font-family: var(--font-family);
     color: var(--white-bg);
     background: var(--blue-color);
     padding: 5px 16px;
     border-radius: 8px;
     border: none;
     line-height: 22px;
-  }
-  button{
     width: 100%;
   }
 }
