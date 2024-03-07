@@ -5,9 +5,12 @@ export class Dialog {
 		errorModal: document.getElementById('error-modal'),
 		loadingCancelButton: document.getElementById('loading-cancel-button'),
 		closeErrorModalButton: document.getElementById('close-error-modal-button'),
+		closeAddNewFileModalButton: document.getElementById('close-add-new-file-modal-button'),
 		errorConfirmButton: document.getElementById('error-confirm-button'),
 		loadingMessage: document.querySelector('.loading-message'),
-		errorMessage: document.querySelector('.error-message')
+		errorMessage: document.querySelector('.error-message'),
+		addNewFileButton: document.querySelector('.add-new-file-button'),
+		addNewFileModal: document.querySelector('.add-new-file-modal')
 	}
 	constructor() {
 		this.modalOverlay = this.dialogParams.modalOverlay
@@ -18,10 +21,15 @@ export class Dialog {
 		this.errorConfirmButton = this.dialogParams.errorConfirmButton
 		this.loadingMessage = this.dialogParams.loadingMessage
 		this.errorMessage = this.dialogParams.errorMessage
+		this.addNewFileButton = this.dialogParams.addNewFileButton
+		this.closeAddNewFileModalButton = this.dialogParams.closeAddNewFileModalButton
+		this.addNewFileModal = this.dialogParams.addNewFileModal
 
 		this.loadingCancelButton.addEventListener('click', this.hideModalOverlay.bind(this))
 		this.closeErrorModalButton.addEventListener('click', this.hideModalOverlay.bind(this))
 		this.errorConfirmButton.addEventListener('click', this.hideModalOverlay.bind(this))
+		this.addNewFileButton.addEventListener('click', this.showAddNewFileModal.bind(this))
+		this.closeAddNewFileModalButton.addEventListener('click', this.hideModalOverlay.bind(this))
 	}
 
 	showModalOverlay() {
@@ -45,11 +53,21 @@ export class Dialog {
 	}
 
 	hideModalOverlay() {
-		this.modalOverlay.classList.add('modal--hide')
+		this.modalOverlay.classList.remove('modal--show')
 	}
 
 	showLoadingModal() {
 		this.loadingModal.classList.remove('modal--hide')
+	}
+
+	showAddNewFileModal() {
+		this.showModalOverlay()
+		this.hideLoadingModal()
+		this.addNewFileModal.classList.remove('modal--hide')
+	}
+
+	hideAddNewFileModal() {
+		this.addNewFileModal.classList.add('modal--hide')
 	}
 
 	hideLoadingModal() {

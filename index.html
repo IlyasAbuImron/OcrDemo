@@ -32,6 +32,22 @@
                 <button id="error-confirm-button" class="confirm-button">Ok</button>
             </div>
         </div>
+        <div class="add-new-file-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New</h2>
+                <span id="close-add-new-file-modal-button" class="close-button"><img src="static/images/close.svg" alt="Close button"></span>
+            </div>
+            <img class="add-new-file-icon" src="static/images/🧬document.add.svg" alt="icon"/>
+            <div class="start-screen-dialog__text">
+                Drag PDF, JPG, PNG file here <br>
+                or press the Add New button below
+            </div>
+            <button class="add-new-file-modal-button">
+                Brose
+                <img src="static/images/folder.svg" alt="Folder opened">
+                <input type="file" id="brose-button" />
+            </button>
+        </div>
     </div>
     <div class="screen start-screen" id="screen1">
         <div class="start-screen-dialog" id="add-new-file">
@@ -60,7 +76,7 @@
                     <div class="content-view__header">
                         <div id="document-name"></div>
                         <div class="content-view__header-buttons">
-                            <button class="add-button">
+                            <button class="add-new-file-button">
                                 Add new
                                 <img class="add-button-icon" src="static/images/🧬plus.svg" alt="Plus icon">
                             </button>
@@ -100,6 +116,7 @@
             2024, IDScan.net OCR Demo v1.0.0
         </footer>
     </div>
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
     <script type="module" src="static/scripts/index.js"></script>
 </div>
 </body>
