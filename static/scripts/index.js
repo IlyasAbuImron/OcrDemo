@@ -72,3 +72,36 @@ const screen2 = new Screen('screen2')
 
 screen1.show()
 screen2.hide()
+// screen2.show()
+
+document.getElementById('save-button').addEventListener('click', function() {
+    const text = document.getElementById('document-text').textContent
+    const blob = new Blob([text], {type: "text/plain;charset=utf-8"})
+    const link = document.createElement("a")
+    link.href = URL.createObjectURL(blob)
+    link.download = "savedText.txt"
+    link.click()
+})
+
+function copyTextToClipboard(text) {
+    const textarea = document.createElement("textarea")
+    textarea.textContent = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand("copy")
+    document.body.removeChild(textarea)
+}
+
+document.getElementById('copy-button').addEventListener('click', function() {
+    const text = document.getElementById('document-text').textContent
+    copyTextToClipboard(text)
+    alert('Текст скопирован в буфер обмена!')
+})
+
+const backToScreen1Button = document.querySelector('.navigation-back-button')
+backToScreen1Button.addEventListener('click', (event) => {
+    if (event.target) {
+        screen2.hide()
+        screen1.show()
+    }
+})

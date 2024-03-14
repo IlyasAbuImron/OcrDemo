@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>DIVE OCR Demo</title>
+    <link rel="icon" type="image/svg+xml" href="static/images/DIVE-logo.svg">
     <link rel="stylesheet" href="static/styles/style.css">
 </head>
 <body>
@@ -69,9 +70,14 @@
         </div>
     </div>
     <div class="screen result-screen" id="screen2">
-        <nav>Back</nav>
+        <div class="navigation-back">
+            <span class="navigation-back-button">
+                <img src="static/images/arrow-left.svg">
+                <span>Back</span>
+            </span>
+        </div>
         <section>
-            <aside>
+            <article>
                 <div class="content-view">
                     <div class="content-view__header">
                         <div id="document-name"></div>
@@ -90,17 +96,17 @@
                         <img src="" id="document-image">
                     </div>
                 </div>
-            </aside>
+            </article>
             <article>
                 <div class="content-view">
                     <div class="content-view__header">
                         <div>JSON</div>
                         <div class="content-view__header-buttons">
-                            <button class="copy-and-save-buttons">
+                            <button id="copy-button" class="copy-and-save-buttons">
                                 Copy
                                 <img src="static/images/🧬copy.svg" alt="Copy icon">
                             </button>
-                            <button class="copy-and-save-buttons">
+                            <button id="save-button" class="copy-and-save-buttons">
                                 Save
                                 <img src="static/images/🧬save.svg" alt="Save icon">
                             </button>
@@ -113,7 +119,8 @@
             </article>
         </section>
         <footer>
-            2024, IDScan.net OCR Demo v1.0.0
+            <div>2024, IDScan.net OCR Demo v1.0.0</div>
+            <img src="static/images/logo-idscan.net-color.svg">
         </footer>
     </div>
     <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
