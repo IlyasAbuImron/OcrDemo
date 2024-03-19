@@ -651,6 +651,20 @@ button {
   line-height: 22px;
 }
 
+.service-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
 :root {
   --font-family: Inter;
   --white-bg: #FFF;
@@ -751,6 +765,7 @@ button {
 }
 .result-screen .navigation-back {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 15px;
   font-size: 18px;
@@ -814,6 +829,7 @@ button {
   border: solid 1px #E0E0E0;
   border-radius: 8px;
   height: calc(100% - 50px);
+  padding: 20px;
 }
 .result-screen .content-view__content img {
   width: 100%;
@@ -822,6 +838,23 @@ button {
   background: #fff;
   color: #1C1C1C;
   border: 1px solid #D3D3D3;
+}
+.result-screen .document-text {
+  text-align: left;
+}
+.result-screen .document-text-empty {
+  font-size: 16px;
+  color: #1C1C1C;
+  text-align: center;
+  margin-top: 50%;
+  display: none;
+}
+.result-screen .document-text-empty img {
+  width: 72px;
+  height: 72px;
+}
+.result-screen .show-warning {
+  display: block;
 }
 
 :root {
@@ -942,7 +975,6 @@ input[type=file] {
 .modal .error-modal .modal-body .error-info {
   display: flex;
   justify-content: start;
-  align-items: center;
   font-size: 14px;
   font-weight: 400;
 }

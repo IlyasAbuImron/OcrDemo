@@ -2,7 +2,7 @@ export class DragAndDrop {
     dragOverBlock = `
     <div class="is-dragover">
         <div class="drop-file">
-            <img class="drop-file-icon" src="static/images/🧬document.add.svg" alt="Add document icon"/>
+            <img class="drop-file-icon" src="static/images/document.add.svg" alt="Add document icon"/>
             <div>Drop your file here</div>
         </div>
         <div class="supported-files">Supported files: PDF, JPG, PNG</div>

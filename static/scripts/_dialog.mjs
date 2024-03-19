@@ -32,6 +32,16 @@ export class Dialog {
 		this.closeAddNewFileModalButton.addEventListener('click', this.hideModalOverlay.bind(this))
 	}
 
+	isShowModal(isLoadingModal) {
+		if (isLoadingModal) {
+			this.showModalOverlay()
+			this.showLoadingModal()
+		}
+		if (!isLoadingModal) {
+			this.hideModalOverlay()
+		}
+	}
+
 	showModalOverlay() {
 		this.modalOverlay.classList.add('modal--show')
 	}
@@ -41,15 +51,11 @@ export class Dialog {
 	}
 
 	updateLoadingMessage() {
-		this.loadingMessage.textContent = 'Loading...'
+		// this.loadingMessage.textContent = 'Loading...'
 
 		setTimeout(() => {
 			this.loadingMessage.textContent = 'Recognition in progress...'
 		}, 2000)
-	}
-
-	showErrorMessage(message) {
-		this.errorMessage.textContent = message
 	}
 
 	hideModalOverlay() {
@@ -57,6 +63,10 @@ export class Dialog {
 	}
 
 	showLoadingModal() {
+		this.loadingMessage.textContent = 'Loading...'
+		this.hideErrorModal()
+		this.hideAddNewFileModal()
+		this.updateLoadingMessage() // ????????????
 		this.loadingModal.classList.remove('modal--hide')
 	}
 
@@ -74,7 +84,9 @@ export class Dialog {
 		this.loadingModal.classList.add('modal--hide')
 	}
 
-	showErrorModal() {
+	showErrorModal(message) {
+		this.hideLoadingModal()
+		this.errorMessage.textContent = message
 		this.errorModal.classList.remove('modal--hide')
 	}
 
